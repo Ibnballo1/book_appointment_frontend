@@ -1,9 +1,6 @@
 import React from 'react';
-import {
-  Route,
-  Routes,
-} from 'react-router-dom';
-import Hello from './components/Hello';
+import { Route, Routes } from 'react-router-dom';
+import Room from './components/Room';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import setAuthToken from './components/setAuthToken';
@@ -22,7 +19,7 @@ const App = () => {
           path="/"
           element={(
             <Protected>
-              <Hello />
+              <Route path="/" element={<Room />} />
             </Protected>
           )}
         />
