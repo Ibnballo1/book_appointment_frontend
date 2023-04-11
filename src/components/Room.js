@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
 
 const Room = () => {
@@ -17,11 +18,13 @@ const Room = () => {
       <div>
         {roomData.map((room) => (
           <div key={room.id}>
-            {room.name}
-            {room.description}
-            {room.photo}
-            {room.city}
-            {room.price}
+            <Link to={`/rooms/${room.id}`}>
+              {room.name}
+              {room.description}
+              {room.photo}
+              {room.city}
+              {room.price}
+            </Link>
           </div>
         ))}
       </div>
