@@ -21,6 +21,7 @@ const Room = () => {
             <Link to={`/rooms/${room.id}`}>
               {room.name}
               {room.description}
+              {room.id}
               {room.photo}
               {room.city}
               {room.price}
