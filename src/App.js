@@ -1,20 +1,36 @@
 import React from 'react';
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
   Route,
-  RouterProvider,
+  Routes,
 } from 'react-router-dom';
 import Hello from './components/Hello';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import setAuthToken from './components/setAuthToken';
+import Protected from './components/Protected';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Hello />} />,
-  ),
-);
+const App = () => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    setAuthToken(token);
+  }
 
-const App = () => (
-  <RouterProvider router={router} />
-);
+  return (
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={(
+            <Protected>
+              <Hello />
+            </Protected>
+          )}
+        />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </>
+  );
+};
 
 export default App;
