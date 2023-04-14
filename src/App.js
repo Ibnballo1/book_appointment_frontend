@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-  Route,
-  Routes,
-} from 'react-router-dom';
-import Hello from './components/Hello';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Room from './components/Room';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import setAuthToken from './components/setAuthToken';
-import Protected from './components/Protected';
 
 const App = () => {
   const token = localStorage.getItem('token');
@@ -16,20 +12,15 @@ const App = () => {
   }
 
   return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={(
-            <Protected>
-              <Hello />
-            </Protected>
-          )}
-        />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
-    </>
+    <Router>
+      <>
+        <Routes>
+          <Route path="/" element={<Room />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </>
+    </Router>
   );
 };
 
