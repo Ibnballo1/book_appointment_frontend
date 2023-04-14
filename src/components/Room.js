@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
 
 const Room = () => {
@@ -9,6 +9,11 @@ const Room = () => {
     dispatch(fetchRoom());
   }, []);
   const roomData = useSelector((state) => state.room.data);
+  const navigate = useNavigate();
+  const signOut = () => {
+    localStorage.removeItem('token');
+    navigate('/signin');
+  };
 
   return (
     <div>
@@ -29,8 +34,10 @@ const Room = () => {
           </div>
         ))}
       </div>
+      <button onClick={signOut} type="button">
+        SignOut
+      </button>
     </div>
   );
 };
-
 export default Room;
