@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Room from './components/Room';
+import AddRoom from './redux/room/AddRoom';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import setAuthToken from './components/setAuthToken';
@@ -16,6 +17,7 @@ const App = () => {
       <>
         <Routes>
           <Route path="/" element={<Room />} />
+          <Route path="/redux/room/AddRoom" element={<AddRoom />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>

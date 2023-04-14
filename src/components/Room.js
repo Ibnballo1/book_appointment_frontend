@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
+// import AddRoom from '../redux/room/AddRoom';
 
 const Room = () => {
   const dispatch = useDispatch();
@@ -17,9 +18,10 @@ const Room = () => {
 
   return (
     <div>
-      <h1>
-        Rooms
-      </h1>
+      <h1>Rooms</h1>
+      <nav>
+        <Link to="../redux/room/AddRoom">Add Room</Link>
+      </nav>
       <div>
         {roomData.map((room) => (
           <div key={room.id}>
