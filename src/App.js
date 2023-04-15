@@ -18,6 +18,9 @@ const App = () => {
           <Route path="/" element={<Room />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route exact path="/reserve" element={<Reserve />} />
+          <Route exact path="/reserve/:id" element={<Reserve />} />
+          <Route exact path="/reservations" element={<MyReservations />} />
         </Routes>
       </>
     </Router>
