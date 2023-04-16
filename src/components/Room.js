@@ -7,7 +7,7 @@ const Room = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRoom());
-  }, []);
+  }, [dispatch]);
   const roomData = useSelector((state) => state.room.data);
   const navigate = useNavigate();
   const signOut = () => {
