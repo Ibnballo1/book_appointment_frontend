@@ -4,25 +4,25 @@ const Reserve = () => {
   const [roomId, setRoomId] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [message, setMessage] = useState('');
 
   const reserveRoom = async (roomId, startDate, endDate) => {
     const url = 'http://127.0.0.1:3000/api/v1/reservations';
-    const data = { roomId, startDate, endDate };
-    const headers = { 'Content-Type': 'application/json' };
-    const response = await fetch(url, {
+    const data = { room_id: roomId, start_date: startDate, end_date: endDate };
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    };
+    await fetch(url, {
       method: 'POST',
       headers,
       body: JSON.stringify(data),
     });
-    const json = await response.json();
-    return json;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    reserveRoom(roomId, startDate, endDate).then((response) => {
-      setMessage(response.success ? 'Reservation created successfully!' : response.error);
+    reserveRoom(roomId, startDate, endDate).then(() => {
+      window.location.href = '/reservations';
     });
   };
 
@@ -44,7 +44,6 @@ const Reserve = () => {
       </label>
       <br />
       <button type="submit">Reserve Room</button>
-      {message && <div>{message}</div>}
     </form>
   );
 };
