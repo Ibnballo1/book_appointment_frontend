@@ -7,20 +7,29 @@ const MyReservations = () => {
   useEffect(() => { dispatch(fetchReservations()); }, []);
   const reservationsData = useSelector((state) => state.reservations.data);
   return (
-    <main>
-      My Reservations
-      {reservationsData.map((reservation) => (
-        <div key={reservation.id}>
-          {reservation.id}
-          {reservation.room_id}
-          {reservation.user_id}
-          {reservation.start_date}
-          {reservation.end_date}
-          {reservation.created_at}
-          {reservation.updated_at}
-        </div>
-      ))}
-    </main>
+    <div>
+      <h1>My Reservations</h1>
+      <ul>
+        {reservationsData.map((reservation) => (
+          <li key={reservation.id}>
+            Reservation ID:
+            {reservation.id}
+            Room ID:
+            {reservation.room_id}
+            User ID:
+            {reservation.user_id}
+            Start Date:
+            {reservation.start_date}
+            End Date:
+            {reservation.end_date}
+            Room Name:
+            {reservation.room.name}
+            City:
+            {reservation.room.city}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
