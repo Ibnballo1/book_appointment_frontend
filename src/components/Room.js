@@ -17,9 +17,10 @@ const Room = () => {
 
   return (
     <div>
-      <h1>
-        Rooms
-      </h1>
+      <h1>Rooms</h1>
+      <nav>
+        <Link to="../redux/room/AddRoom">Add Room</Link>
+      </nav>
       <div>
         {roomData.map((room) => (
           <div key={room.id}>
