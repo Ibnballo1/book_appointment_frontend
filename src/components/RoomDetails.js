@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
 
 const RoomDetails = () => {
+  const dataFetchedRef = useRef(false);
   const { id } = useParams();
   console.log(id);
   const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const RoomDetails = () => {
   }, [dispatch, id]);
   const roomDetail = useSelector((state) => state.room.data[0]);
   console.log(roomDetail);
-  const dataFetchedRef = useRef(false);
   if (!roomDetail) {
     return <p>No Room found</p>;
   }
@@ -22,7 +22,7 @@ const RoomDetails = () => {
     <div>
       <div>
         <h1>{roomDetail.name}</h1>
-        <img src={roomDetail.photo} />
+        <img src={roomDetail.photo} alt="room" />
         <h2>{roomDetail.city}</h2>
         <h2>{roomDetail.price}</h2>
         <p>{roomDetail.description}</p>
