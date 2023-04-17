@@ -6,6 +6,7 @@ import Reserve from './components/Reserve';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import setAuthToken from './components/setAuthToken';
+import RoomDetails from './components/RoomDetails';
 
 const App = () => {
   const token = localStorage.getItem('token');
@@ -24,6 +25,7 @@ const App = () => {
           <Route exact path="/reserve/:id" element={<Reserve />} /> */}
           <Route exact path="/reservations" element={<MyReservations />} />
           <Route exact path="/reserve" element={<Reserve />} />
+          <Route exact path="rooms/:id" element={<RoomDetails />} />
         </Routes>
       </>
     </Router>
