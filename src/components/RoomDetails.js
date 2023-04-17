@@ -1,19 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import fetchRoom from '../redux/room/fetchRoom';
+import fetchDetails from '../redux/room/fetchDetails';
 
 const RoomDetails = () => {
   const dataFetchedRef = useRef(false);
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    dispatch(fetchRoom(id));
+    dispatch(fetchDetails(id));
   }, [dispatch, id]);
-  const roomDetail = useSelector((state) => state.room.data[0]);
+  const roomDetail = useSelector((state) => state.room.data);
   console.log(roomDetail);
   if (!roomDetail) {
     return <p>No Room found</p>;
