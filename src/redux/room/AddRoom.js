@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AddRoom = () => {
+  const [error, setError] = useState(null);
   const [formRoomData, setFormRoomData] = useState({
     name: '',
     description: '',
@@ -12,7 +13,7 @@ const AddRoom = () => {
   });
   const navigate = useNavigate();
 
-  // const accessToken = localStorage.getItem('token');
+  const accessToken = localStorage.getItem('token');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,13 +26,15 @@ const AddRoom = () => {
         jsonRoomData, {
           headers: {
             'Content-Type': 'application/json',
-            // Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       );
       navigate('/');
     } catch (error) {
-      navigate('/');
+      if (error.response.status === 401) {
+        setError(error.response.data.error);
+      }
     }
   };
 
@@ -41,44 +44,48 @@ const AddRoom = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={formRoomData.name}
-        onChange={handleChange}
-        placeholder="Name"
-      />
-      <input
-        type="text"
-        name="description"
-        value={formRoomData.description}
-        onChange={handleChange}
-        placeholder="Description"
-      />
-      <input
-        type="text"
-        name="photo"
-        value={formRoomData.photo}
-        onChange={handleChange}
-        placeholder="Photo Link"
-      />
-      <input
-        type="text"
-        name="city"
-        value={formRoomData.city}
-        onChange={handleChange}
-        placeholder="City"
-      />
-      <input
-        type="number"
-        name="price"
-        value={formRoomData.price}
-        onChange={handleChange}
-        placeholder="Price"
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <>
+      {error && error}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formRoomData.name}
+          onChange={handleChange}
+          placeholder="Name"
+        />
+        <input
+          type="text"
+          name="description"
+          value={formRoomData.description}
+          onChange={handleChange}
+          placeholder="Description"
+        />
+        <input
+          type="text"
+          name="photo"
+          value={formRoomData.photo}
+          onChange={handleChange}
+          placeholder="Photo Link"
+        />
+        <input
+          type="text"
+          name="city"
+          value={formRoomData.city}
+          onChange={handleChange}
+          placeholder="City"
+        />
+        <input
+          type="number"
+          name="price"
+          value={formRoomData.price}
+          onChange={handleChange}
+          placeholder="Price"
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </>
+
   );
 };
 
