@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Reserve = () => {
   const [roomId, setRoomId] = useState('');
@@ -44,6 +45,7 @@ const Reserve = () => {
       </label>
       <br />
       <button type="submit">Reserve Room</button>
+      <div><Link to="/">Back</Link></div>
     </form>
   );
 };

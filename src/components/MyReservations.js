@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import fetchReservations from '../redux/reservation/fetchReservations';
 
 const MyReservations = () => {
@@ -29,6 +30,7 @@ const MyReservations = () => {
           </li>
         ))}
       </ul>
+      <div><Link to="/">Back</Link></div>
     </div>
   );
 };

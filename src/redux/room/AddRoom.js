@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AddRoom = () => {
@@ -83,6 +83,7 @@ const AddRoom = () => {
           placeholder="Price"
         />
         <button type="submit">Submit</button>
+        <div><Link to="/">Back</Link></div>
       </form>
     </>
 
