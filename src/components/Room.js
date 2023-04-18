@@ -19,7 +19,7 @@ const Room = () => {
     <div>
       <h1>Rooms</h1>
       <nav>
-        <Link to="../redux/room/AddRoom">Add Room</Link>
+        <Link to="/add_room">Add Room</Link>
       </nav>
       <div>
         {roomData.map((room) => (
