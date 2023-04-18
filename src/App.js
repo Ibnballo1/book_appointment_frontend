@@ -7,6 +7,7 @@ import Reserve from './components/Reserve';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import setAuthToken from './components/setAuthToken';
+import Protected from './components/Protected';
 
 const App = () => {
   const token = localStorage.getItem('token');
@@ -18,7 +19,14 @@ const App = () => {
     <Router>
       <>
         <Routes>
-          <Route path="/" element={<Room />} />
+          <Route
+            path="/"
+            element={(
+              <Protected>
+                <Room />
+              </Protected>
+        )}
+          />
           <Route path="/redux/room/AddRoom" element={<AddRoom />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
