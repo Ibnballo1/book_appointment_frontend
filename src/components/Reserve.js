@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Reserve = () => {
   const [roomId, setRoomId] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+  const navigate = useNavigate();
 
   const reserveRoom = async (roomId, startDate, endDate) => {
     const url = 'http://127.0.0.1:3000/api/v1/reservations';
@@ -17,6 +19,7 @@ const Reserve = () => {
       headers,
       body: JSON.stringify(data),
     });
+    navigate('/reservations');
   };
 
   const handleSubmit = (e) => {
