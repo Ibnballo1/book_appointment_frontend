@@ -27,6 +27,8 @@ const Room = () => {
         {roomData.map((room) => (
           <div key={room.id}>
             <Link to={`/rooms/${room.id}`}>
+              Room ID:
+              {room.id}
               {room.name}
               {room.description}
               {room.id}
