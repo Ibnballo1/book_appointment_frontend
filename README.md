@@ -1,70 +1,226 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+  <img src="https://user-images.githubusercontent.com/84629565/202665566-ba1a8ed3-041f-45bc-b21b-efdcc357189b.png" alt="logo" width="140"  height="auto" />
+  <br/>
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📗 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [📖 About the Project](#about-project)
+  - [<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/whatsapp/326/toolbox_1f9f0.png" width="20" height="20"/> Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+    - [Website Mockup 📱 💻 🖥️](#screenshots)
+  - [<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend](#rails-backend)
+  - [<img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board](#kanban-board)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-### `npm test`
+# 📖 Book Appointment Frontend <a name="about-project"></a>
+![book-appointment-frontend-logo]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Book Appointment Frontend** is a luxury room booking application where the user can register new accounts, login and reserve appointsments for booking rooms. It is built and connected by using two different apps both in different repos.One repo take care of the back-end side of the application built with Ruby on Rails and PostgreSQL. The second repo takes care of the front-end which was built with JavaScript React-Redux.
 
-### `npm run build`
+## 🛠 Built With <a name="built-with"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tech Stack <a name="tech-stack"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li>Rails API</li>
+  </ul>
+</details>
 
-### `npm run eject`
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- Features -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Key Features <a name="key-features"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **[Rooms Display page]**
+- **[Room reservation service]**
+- **[Login and Registration using API endpoint]**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
+## Website Mockup 📱 💻 🖥️ <a name="screenshots"></a>
+![screenshot]()
+![screenshot]()
+![screenshot]()
+![screenshot]()
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend <a name="rails-backend"></a>
+- Here is the Backend part of the project [room-appointment-backend](https://github.com/Ibnballo1/book_appointment_backend.git)
 
-### Code Splitting
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🚀 Live Demo <a name="live-demo"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Live Demo :rocket:]() :smiley:
 
-### Making a Progressive Web App
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 💻 Getting Started <a name="getting-started"></a>
 
-### Advanced Configuration
+To get a local copy up and running, follow these steps.
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In order to run this project you need:
+`Git` and `Node.js` installed on your computer.
 
-### Deployment
+- For windows users you can download Git from here: https://git-scm.com/download/win and Node.js from here: https://nodejs.org/en/download/
+- For Mac users you can download Git from here: https://git-scm.com/download/mac and Node.js from here: https://nodejs.org/en/download/
+- For Linux users you can download Git from here: https://git-scm.com/download/linux and Node.js from here: https://nodejs.org/en/download/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Install this project with:
+
+```sh
+  npm install # to install all the dependencies
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+   npm start # for running the project in development mode
+   npm run build # for building the project for production
+```
+
+Run tests
+```sh
+  npm test  # for running the tests
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors (5 Micronauts) <a name="authors"></a>
+
+👤 **Jorge**
+
+- GitHub: [@githubhandle](https://github.com/jorgegoco)
+- Twitter: [@twitterhandle](https://twitter.com/JorgeGo78017548)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jorgegoco/)
+
+👤 **Abdullateef Bello**
+
+- GitHub: [@githubhandle](https://github.com/Ibnballo1)
+- Twitter: [@twitterhandle](https://twitter.com/webprotekh)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/abdullateef_bello)
+
+👤 **Petro Loltolo Lesapiti**
+
+- GitHub: [@petrolesapiti](https://github.com/Loltolo-Lesapiti)
+- LinkedIn: [@petrolesapiti](https://www.linkedin.com/in/petrolesapitiloltolo/)
+
+👤 **Fuad Nabiyev**
+
+- GitHub: [@githubhandle](https://github.com/FuadNabi)
+- Twitter: [@twitterhandle](https://twitter.com/FuadNebiyev2)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/fuad-nabiyev/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Admin Panel and access to add new rooms]**
+- [ ] **[Make a 3D display of each room on Details Page that can be rotated]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+We would like to thank:
+- [Microverse](https://www.microverse.org/)
+- Code Reviewers
+
+Under the the [Creative Commons liscense](https://creativecommons.org/licenses/by-nc/4.0/)
+
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/84629565/181086933-d5bcdb09-da51-40f6-b0f8-a1f191614257.png">
+
+Original design from [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **How I can install vite?**
+
+  - You can install vite by running `npm install -g vite` in your terminal.
+
+- **How I can run this project?**
+
+  - After cloning repository, run `npm install` to install all dependencies. Then run `npm start` to run the project.
+
+- **How I can run tests?**
+  
+    - After cloning repository, run `npm install` to install all dependencies. Then run `npm test` to run the tests.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
