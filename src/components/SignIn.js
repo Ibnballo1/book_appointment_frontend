@@ -66,8 +66,10 @@ function SignIn() {
             className="form-input"
           />
           <div className="form-action-buttons">
-            <Link to="/signup">Sign Up</Link>
-            <input type="submit" value="Sign In" />
+            <Link to="/signup" className="link sign-btn">
+              Sign Up
+            </Link>
+            <input type="submit" value="Sign In" className="sign-btn" />
           </div>
         </form>
       </div>

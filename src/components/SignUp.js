@@ -58,10 +58,10 @@ function SignUp() {
           <input type="text" placeholder="email" name="email" value={user.email} onChange={handleChange} className="form-input" />
           <input type="password" placeholder="password" name="password" value={user.password} onChange={handleChange} className="form-input" />
           <div className="form-action-buttons">
-            <Link to="/signin">
+            <Link to="/signin" className="link sign-btn">
               Sign In
             </Link>
-            <input type="submit" value="Sign Up" />
+            <input type="submit" value="Sign Up" className="sign-btn" />
           </div>
         </form>
       </div>
