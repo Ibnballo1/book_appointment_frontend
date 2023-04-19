@@ -42,9 +42,9 @@ function SignIn() {
   };
 
   return (
-    <div className="sign-in-components">
+    <div className="entry-page-components">
       <img src="https://content.pymnts.com/wp-content/uploads/2016/05/Hotel-Room-Secondary-Market-1000x600.jpg" alt="hotel" className="hotel-image" />
-      <div className="sign-in-container">
+      <div className="entry-page-container">
         <h1>
           Sign In
         </h1>
@@ -56,7 +56,7 @@ function SignIn() {
             <Link to="/signup">
               Sign Up
             </Link>
-            <input type="submit" value="Sign in" />
+            <input type="submit" value="Sign In" />
           </div>
         </form>
       </div>

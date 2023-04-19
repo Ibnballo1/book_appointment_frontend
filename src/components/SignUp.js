@@ -45,20 +45,25 @@ function SignUp() {
   };
 
   return (
-    <div>
-      {error && <p>{error}</p>}
-      <h1>
-        SignUp
-      </h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="name" name="name" value={user.name} onChange={handleChange} />
-        <input type="text" placeholder="email" name="email" value={user.email} onChange={handleChange} />
-        <input type="password" placeholder="password" name="password" value={user.password} onChange={handleChange} />
-        <input type="submit" />
-      </form>
-      <Link to="/signin">
-        SignIn
-      </Link>
+    <div className="entry-page-components">
+      <img src="https://content.pymnts.com/wp-content/uploads/2016/05/Hotel-Room-Secondary-Market-1000x600.jpg" alt="hotel" className="hotel-image" />
+      <div className="entry-page-container">
+        {error && <p>{error}</p>}
+        <h1>
+          Sign Up
+        </h1>
+        <form onSubmit={handleSubmit} className="form-container">
+          <input type="text" placeholder="name" name="name" value={user.name} onChange={handleChange} className="form-input" />
+          <input type="text" placeholder="email" name="email" value={user.email} onChange={handleChange} className="form-input" />
+          <input type="password" placeholder="password" name="password" value={user.password} onChange={handleChange} className="form-input" />
+          <div className="form-action-buttons">
+            <Link to="/signin">
+              Sign In
+            </Link>
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+      </div>
     </div>
 
   );

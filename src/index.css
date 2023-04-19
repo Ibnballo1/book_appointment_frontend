@@ -9,13 +9,13 @@ h1 {
   color: #97bf0e;
 }
 
-.sign-in-components {
+.entry-page-components {
   display: flex;
   justify-content: space-between;
   height: 100vh;
 }
 
-.sign-in-container {
+.entry-page-container {
   display: flex;
   justify-content: center;
   align-items: center;
