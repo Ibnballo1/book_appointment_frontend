@@ -17,23 +17,30 @@ const AddRoom = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const jsonRoomData = JSON.stringify(formRoomData);
-
-      await axios.post(
-        'http://127.0.0.1:3000/api/v1/rooms',
-        jsonRoomData, {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${accessToken}`,
+    if (formRoomData.name.length < 1
+      || formRoomData.description.length < 1
+       || formRoomData.photo.length < 1
+        || formRoomData.photo.length < 1) {
+      setError("Input field can't be blank");
+    } else if (formRoomData.price < 1) {
+      setError('Price value should be grater than zero');
+    } else {
+      try {
+        const jsonRoomData = JSON.stringify(formRoomData);
+        await axios.post(
+          'http://127.0.0.1:3000/api/v1/rooms',
+          jsonRoomData, {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${accessToken}`,
+            },
           },
-        },
-      );
-      navigate('/');
-    } catch (error) {
-      if (error.response.status === 401) {
-        setError(error.response.data.error);
+        );
+        navigate('/');
+      } catch (error) {
+        if (error.response.status === 401) {
+          setError(error.response.data.error);
+        }
       }
     }
   };
