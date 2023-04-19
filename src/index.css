@@ -8,7 +8,29 @@ body {
 h1 {
   color: #97bf0e;
 }
-
+.reserveCont{
+ align-items: end;
+ gap: 20px;
+}
+.reserve {
+  width: 100px;
+  height: auto;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #97bf0e;
+  transform: rotate(180deg);
+}
+.arrowCont {
+  gap: 10px
+}
+.arrowCont a {
+  text-decoration: none;
+  font-size: bold;
+}
 .entry-page-components {
   display: flex;
   justify-content: space-between;
