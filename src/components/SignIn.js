@@ -46,17 +46,19 @@ function SignIn() {
       <img src="https://content.pymnts.com/wp-content/uploads/2016/05/Hotel-Room-Secondary-Market-1000x600.jpg" alt="hotel" className="hotel-image" />
       <div className="sign-in-container">
         <h1>
-          SignIn
+          Sign In
         </h1>
         {error && <p>{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="email" name="email" value={user.email} onChange={handleChange} />
-          <input type="password" placeholder="password" name="password" value={user.password} onChange={handleChange} />
-          <input type="submit" />
+        <form onSubmit={handleSubmit} className="form-container">
+          <input type="text" placeholder="Email" name="email" value={user.email} onChange={handleChange} className="form-input" />
+          <input type="password" placeholder="Password" name="password" value={user.password} onChange={handleChange} className="form-input" />
+          <div className="form-action-buttons">
+            <Link to="/signup">
+              Sign Up
+            </Link>
+            <input type="submit" value="Sign in" />
+          </div>
         </form>
-        <Link to="/signup">
-          SignUp
-        </Link>
       </div>
     </div>
 

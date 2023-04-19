@@ -5,20 +5,74 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+h1 {
+  color: #97bf0e;
+}
+
 .sign-in-components {
   display: flex;
   justify-content: space-between;
-  margin-right: 5%;
+  height: 100vh;
 }
 
 .sign-in-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
   flex-direction: column;
-  
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+}
+
+.form-input {
+  padding: 15px 5px;
+  outline: none;
+  margin-bottom: 30px;
+}
+
+.form-action-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-action-buttons input {
+  background-color: #97bf0e;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 17px 35px;
+  font-size: 16px;
+}
+
+.form-action-buttons a {
+  background-color: #fff;
+  border: 1px solid #97bf0e;
+  font-weight: 500;
+  padding: 15px 33px;
+  text-decoration: none;
+  color: #97bf0e;
+}
+
+.form-action-buttons a:hover {
+  background-color: #708f0c;
+  border: 1px solid #708f0c;
+  color: white;
+  transition: 0.5s;
+}
+
+.form-action-buttons input:hover {
+  background-color: #708f0c;
+  color: white;
+  transition: 0.5s;
 }
 
 .hotel-image {
-  width: 70%;
+  width: 60%;
 }
