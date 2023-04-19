@@ -74,14 +74,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Website Mockup 📱 💻 🖥️ <a name="screenshots"></a>
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend <a name="rails-backend"></a>
 - Here is the Backend part of the project [room-appointment-backend](https://github.com/Ibnballo1/book_appointment_backend.git)
 
