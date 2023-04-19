@@ -7,6 +7,7 @@ import Reserve from './components/Reserve';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import RoomDetails from './components/RoomDetails';
+import DeleteRoom from './components/DeleteRoom';
 import setAuthToken from './components/setAuthToken';
 import Protected from './components/Protected';
 
@@ -36,6 +37,7 @@ const App = () => {
           <Route exact path="/reservations" element={<MyReservations />} />
           <Route exact path="/reserve" element={<Reserve />} />
           <Route exact path="/rooms/:id" element={<RoomDetails />} />
+          <Route path="/delete" element={<DeleteRoom />} />
         </Routes>
       </>
     </Router>

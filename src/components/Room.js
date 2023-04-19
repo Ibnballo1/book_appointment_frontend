@@ -20,6 +20,7 @@ const Room = () => {
       <h1>Rooms</h1>
       <nav>
         <div><Link to="../add_room">Add Room</Link></div>
+        <div><Link to="../delete">Delete Room</Link></div>
         <div><Link to="../reservations">My Reservations</Link></div>
         <div><Link to="../reserve">Reserve Room</Link></div>
       </nav>
@@ -27,6 +28,8 @@ const Room = () => {
         {roomData.map((room) => (
           <div key={room.id}>
             <Link to={`/rooms/${room.id}`}>
+              Room ID:
+              {room.id}
               {room.name}
               {room.description}
               {room.id}
