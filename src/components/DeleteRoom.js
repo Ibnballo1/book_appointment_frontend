@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
@@ -9,6 +9,7 @@ const Room = () => {
     dispatch(fetchRoom());
   }, [dispatch]);
   const roomData = useSelector((state) => state.room.data);
+  const [error, setError] = useState(null);
   const headers = {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -19,13 +20,18 @@ const Room = () => {
       method: 'DELETE',
       headers,
     })
-      .then(() => {
-        window.location.href = '/';
+      .then((response) => {
+        if (response.status === 401) {
+          setError(response.statusText);
+        } else {
+          window.location.href = '/';
+        }
       });
   };
 
   return (
     <div>
+      { error && error}
       <h1>Delete Room</h1>
       <div>
         {roomData.map((room) => (
