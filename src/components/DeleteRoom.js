@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
+import '../home.css';
+import Navigate from './Navigation';
 
 const Room = () => {
   const dispatch = useDispatch();
@@ -30,19 +32,33 @@ const Room = () => {
   };
 
   return (
-    <div>
+    <div className="container">
+      <Navigate />
       { error && error}
-      <h1>Delete Room</h1>
-      <div>
-        {roomData.map((room) => (
-          <div key={room.id}>
-            <p>{room.name}</p>
-            <img src={room.photo} alt={room.name} />
-            <button type="button" onClick={() => handleDeleteRoom(room.id)}>Delete</button>
-          </div>
-        ))}
+      <div className="home">
+        <div className="header-div">
+          <h1>Delete Rooms</h1>
+        </div>
+        <div className="rooms row" style={{ marginTop: '40px' }}>
+          {roomData.map((room) => (
+            <div key={room.id} className="room-page col-md-4 col-lg-3 col-sm-6 text-center align-center">
+
+              <div className="card">
+                <img className="card-img-top" src={room.photo} alt="Room Pic" />
+                <div className="card-body">
+                  <h5 className="card-title">{room.name}</h5>
+                  <p className="card-text">{room.description}</p>
+                  <button type="button" className="btn btn-outline-danger" onClick={() => handleDeleteRoom(room.id)}>Delete</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div><Link to="/">Back</Link></div>
+      <div className="d-flex flex-row arrowCont">
+        <span className="arr" />
+        <Link to="/">Back</Link>
+      </div>
     </div>
   );
 };

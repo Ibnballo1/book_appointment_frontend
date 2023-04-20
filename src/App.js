@@ -32,8 +32,6 @@ const App = () => {
           <Route path="/add_room" element={<AddRoom />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          {/* <Route exact path="/reserve" element={<Reserve />} />
-          <Route exact path="/reserve/:id" element={<Reserve />} /> */}
           <Route exact path="/reservations" element={<MyReservations />} />
           <Route exact path="/reserve" element={<Reserve />} />
           <Route exact path="/rooms/:id" element={<RoomDetails />} />

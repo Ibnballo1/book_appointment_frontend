@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import HotelImage from './HotelImage';
 
 function SignUp() {
   const [error, setError] = useState(null);
@@ -46,9 +47,9 @@ function SignUp() {
 
   return (
     <div className="entry-page-components">
-      <img src="https://content.pymnts.com/wp-content/uploads/2016/05/Hotel-Room-Secondary-Market-1000x600.jpg" alt="hotel" className="hotel-image" />
+      <HotelImage />
       <div className="entry-page-container">
-        {error && <p>{error}</p>}
+        {error && <p className="sign-up-error">{error}</p>}
         <h1>
           Sign Up
         </h1>
@@ -57,10 +58,10 @@ function SignUp() {
           <input type="text" placeholder="email" name="email" value={user.email} onChange={handleChange} className="form-input" />
           <input type="password" placeholder="password" name="password" value={user.password} onChange={handleChange} className="form-input" />
           <div className="form-action-buttons">
-            <Link to="/signin">
+            <Link to="/signin" className="link sign-btn">
               Sign In
             </Link>
-            <input type="submit" value="Sign Up" />
+            <input type="submit" value="Sign Up" className="sign-btn" />
           </div>
         </form>
       </div>
