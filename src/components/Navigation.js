@@ -20,7 +20,7 @@ function Navigate() {
   return (
     <>
       <div className="navbar">
-        <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>&#9776;</span>
+        <button className="open" style={{ fontSize: '30px', cursor: 'pointer' }} type="button" onClick={openNav}>&#9776;</button>
         <nav
           id="mySidenav"
           className="sidenav"
@@ -36,7 +36,7 @@ function Navigate() {
               <h1>Coco</h1>
             </li>
             <li>
-              <a className="closebtn" onClick={closeNav}>&times;</a>
+              <button type="button" className="closebtn" onClick={closeNav}>&times;</button>
             </li>
             <li>
               <Link to="../add_room">Add Room</Link>
@@ -51,9 +51,9 @@ function Navigate() {
               <Link to="../reserve">Reserve Room</Link>
             </li>
             <li>
-              <a onClick={signOut} type="button" className="signout">
+              <button onClick={signOut} type="button" className="signout">
                 SignOut
-              </a>
+              </button>
             </li>
           </ul>
         </nav>

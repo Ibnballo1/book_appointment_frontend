@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
+import AddRoomImg from './AddRoomImg';
 
 const Reserve = () => {
   const [roomId, setRoomId] = useState('');
@@ -43,32 +44,42 @@ const Reserve = () => {
   return (
     <>
       {error && error}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="room-id">
-          Room ID:
-          <select id="room-id" onChange={(e) => setRoomId(e.target.value)} value={roomId}>
-            <option value="">Select a room</option>
-            {
+      <div className="reserve-page-components">
+        <div className="reserve-page-container">
+          <form onSubmit={handleSubmit} className="reserve-form-container">
+            <h2 className="reserve-heading">Reserve a room</h2>
+            <label htmlFor="room-id">
+              <span className="reserve-label">Room ID:</span>
+              <select id="room-id" onChange={(e) => setRoomId(e.target.value)} value={roomId} className="reserve-form-input">
+                <option value="">Select a room</option>
+                {
             roomData.map((room) => (
               <option key={room.id} value={room.id}>{room.name}</option>
             ))
           }
-          </select>
-        </label>
-        <br />
-        <label htmlFor="start-date">
-          Start Date:
-          <input id="start-date" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-        </label>
-        <br />
-        <label htmlFor="end-date">
-          End Date:
-          <input id="end-date" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Reserve Room</button>
-        <div><Link to="/">Back</Link></div>
-      </form>
+              </select>
+            </label>
+            <br />
+            <label htmlFor="start-date">
+              <span className="reserve-label">Start Date:</span>
+              <input id="start-date" className="reserve-form-input" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+            </label>
+            <br />
+            <label htmlFor="end-date">
+              <span className="reserve-label">End Date:</span>
+              <input id="end-date" className="reserve-form-input" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+            </label>
+            <br />
+            <button type="submit" className="add-btn">Reserve Room</button>
+            <div className="d-flex flex-row arrowCont">
+              <span className="arr" />
+              <Link to="/">Back</Link>
+            </div>
+          </form>
+        </div>
+        <AddRoomImg />
+      </div>
+
     </>
 
   );

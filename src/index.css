@@ -46,14 +46,16 @@ body {
 .header-div {
   text-align: center;
 }
+
 .header-div h1 {
   color: #97bf0e;
   font-weight: 700;
   font-size: 50px;
 }
+
 .header-div p {
   font-size: 20px;
-  color: #C8C8C8;
+  color: #c8c8c8;
 }
 
 .form-container {
@@ -69,14 +71,17 @@ body {
   font-size: 0.725rem;
   padding-left: 1.25rem;
 }
-.reserveCont{
- align-items: end;
- gap: 20px;
+
+.reserveCont {
+  align-items: end;
+  gap: 20px;
 }
+
 .reserve {
   width: 100px;
   height: auto;
 }
+
 .arrow {
   width: 0;
   height: 0;
@@ -85,13 +90,15 @@ body {
   border-right: 10px solid #97bf0e;
   transform: rotate(180deg);
 }
+
 .arrowCont {
-  gap: 10px
+  gap: 10px;
 }
+
 .arrowCont a {
   text-decoration: none;
-  font-size: bold;
 }
+
 .form-action-buttons {
   display: flex;
 }

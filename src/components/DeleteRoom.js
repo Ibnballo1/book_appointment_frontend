@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
 import '../home.css';
+import Navigate from './Navigation';
 
 const Room = () => {
   const dispatch = useDispatch();
@@ -31,12 +32,8 @@ const Room = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="d-flex flex-row arrowCont">
-        <span className="arr" />
-        <Link to="/">Back</Link>
-      </div>
-      {/* <p className='arr-outer'><i className="arr left"></i> <Link to="/">Back</Link></p> */}
+    <div className="container">
+      <Navigate />
       { error && error}
       <div className="home">
         <div className="header-div">
@@ -58,7 +55,10 @@ const Room = () => {
           ))}
         </div>
       </div>
-
+      <div className="d-flex flex-row arrowCont">
+        <span className="arr" />
+        <Link to="/">Back</Link>
+      </div>
     </div>
   );
 };
