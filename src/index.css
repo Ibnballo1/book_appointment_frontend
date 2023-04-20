@@ -24,6 +24,10 @@ body {
   object-fit: cover;
 }
 
+.nav-bar {
+  display: none;
+}
+
 .entry-page-container {
   position: absolute;
   top: 40%;
@@ -34,12 +38,18 @@ body {
 }
 
 .sign-up-error {
-  color: #ff0000;
+  color: #d31818;
   font-size: 1.5rem;
 }
 
+.header-div {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
-  text-align: center;
   color: #97bf0e;
   font-weight: 700;
 }
@@ -77,15 +87,25 @@ h1 {
   border: none;
 }
 
+.rooms {
+  border: 2px solid purple;
+}
+
 /* Desktop Version Style */
-/* @media only screen and (min-width: 769px) {
+@media only screen and (min-width: 769px) {
   .entry-page-components {
     display: flex;
     justify-content: space-between;
     height: 100vh;
   }
 
+  .nav-bar {
+    display: flex;
+  }
+
   .entry-page-container {
+    position: static;
+    width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,8 +120,9 @@ h1 {
   }
 
   .form-input {
-    padding: 15px 5px;
+    padding: 10px;
     outline: none;
+    font-size: 22px;
     margin-bottom: 30px;
   }
 
@@ -146,4 +167,4 @@ h1 {
   .hotel-image {
     width: 60%;
   }
-} */
+}
