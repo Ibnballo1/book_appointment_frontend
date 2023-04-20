@@ -25,11 +25,11 @@
 - [📝 License](#license)
 
 # 📖 Pinecone Place <a name="about-project"></a>
-![Pinecone Place Logo]("./public/logo.png")
+![Pinecone Place Logo](./public/logo.png)
 
 **Pinecone Place** is a luxury room booking application where the user can register new accounts, login and reserve appointsments for booking rooms. It is built and connected by using two different apps both in different repos.One repo take care of the back-end side of the application built with Ruby on Rails and PostgreSQL. The second repo takes care of the front-end which was built with JavaScript React-Redux.
 
-![Home page image]("./public/home.png")
+![Home page image](./public/home.png)
 
 ### Kanban Board 🖧
 - [Kanban Board](https://github.com/Ibnballo1/book_appointment_backend/projects/1)
