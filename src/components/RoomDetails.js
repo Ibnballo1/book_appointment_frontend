@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import fetchRoom from '../redux/room/fetchRoom';
-import Reserve from './Reserve';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigate from './Navigation';
+import ReserveDetail from './ReserveDetail';
 
 const RoomDetails = () => {
   const { id } = useParams();
@@ -67,7 +67,7 @@ const RoomDetails = () => {
             </div>
             )}
             {showReserve ? (
-              <Reserve />
+              <ReserveDetail id={roomDetail.id} name={roomDetail.name} />
             ) : (
               <button className="btn btn-round btn-success reserve" type="submit" onClick={handleReserveClick}>
                 Reserve
