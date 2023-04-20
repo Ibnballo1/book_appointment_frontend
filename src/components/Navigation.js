@@ -17,27 +17,49 @@ function Navigate() {
     navigate('/signin');
   };
 
+  const x = window.matchMedia('(max-width: 768px)');
+  let width;
+  if (x.matches) {
+    width = isActive ? '250px' : '0px';
+  } else {
+    width = '20%';
+  }
+
   return (
     <>
       <div className="navbar">
-        <button className="open" style={{ fontSize: '30px', cursor: 'pointer' }} type="button" onClick={openNav}>&#9776;</button>
+        {x.matches && (
+          <button
+            className="open"
+            style={{
+              fontSize: '30px',
+              cursor: 'pointer',
+            }}
+            type="button"
+            onClick={openNav}
+          >
+            &#9776;
+          </button>
+        )}
+
         <nav
           id="mySidenav"
           className="sidenav"
-          style={
-          {
-            width: isActive ? '250px' : '0px',
-          }
-        }
+          style={{
+            width,
+          }}
         >
-
           <ul className="nav-item">
             <li>
               <h1>Coco</h1>
             </li>
-            <li>
-              <button type="button" className="closebtn" onClick={closeNav}>&times;</button>
-            </li>
+            {x.matches && (
+              <li>
+                <button type="button" className="closebtn" onClick={closeNav}>
+                  &times;
+                </button>
+              </li>
+            )}
             <li>
               <Link to="../add_room">Add Room</Link>
             </li>

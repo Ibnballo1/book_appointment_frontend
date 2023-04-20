@@ -58,6 +58,16 @@ body {
   color: #c8c8c8;
 }
 
+.room-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.rd-img-box img {
+  width: 100%;
+  height: 100%;
+}
+
 .form-container {
   margin-top: 1.25rem;
   display: grid;
@@ -118,7 +128,6 @@ body {
   border: none;
 }
 
-
 /* Desktop Version Style */
 @media only screen and (min-width: 769px) {
   .entry-page-components {
@@ -127,8 +136,17 @@ body {
     height: 100vh;
   }
 
-  .nav-bar {
-    display: flex;
+  .navbar {
+    display: none;
+  }
+
+  /* button.open {
+    display: none;
+  } */
+
+  nav {
+    border: 2px solid red;
+    /* width: 20% !important; */
   }
 
   .entry-page-container {
@@ -139,6 +157,11 @@ body {
     align-items: center;
     margin: auto;
     flex-direction: column;
+  }
+
+  .room-detail-container {
+    flex-direction: row;
+    align-items: center;
   }
 
   .form-container {

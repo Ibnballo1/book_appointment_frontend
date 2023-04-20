@@ -25,8 +25,8 @@ const RoomDetails = () => {
   return (
     <div className="container">
       <Navigate />
-      <div className="container d-flex mt-3">
-        <div className="container">
+      <div className="container room-detail-container d-flex mt-3">
+        <div className="container rd-img-box">
           <img src={roomDetail.photo} alt="room" />
         </div>
 
