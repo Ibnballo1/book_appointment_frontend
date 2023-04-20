@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -26,10 +27,19 @@ const RoomDetails = () => {
         <img src={roomDetail.photo} alt="room" />
       </div>
 
-      
       <div className="container flex-column">
-        <h2 className="text-end"> {roomDetail.name}</h2>
-        <p className="text-end"> {roomDetail.name} is {roomDetail.description}</p>
+        <h2 className="text-end">
+          {' '}
+          {roomDetail.name}
+        </h2>
+        <p className="text-end">
+          {' '}
+          {roomDetail.name}
+          {' '}
+          is
+          {' '}
+          {roomDetail.description}
+        </p>
         <table className="table table-striped">
           <tbody>
             <tr>
@@ -46,20 +56,21 @@ const RoomDetails = () => {
           </tbody>
         </table>
         <h4>80% Sold out!!</h4>
-        <div className='container d-flex flex-column mt-5 reserveCont'>
-        {!showReserve && (
-        <div className='d-flex flex-row arrowCont'>
-          <Link to="/">Back</Link><h5 className='arrow'></h5>
+        <div className="container d-flex flex-column mt-5 reserveCont">
+          {!showReserve && (
+          <div className="d-flex flex-row arrowCont">
+            <Link to="/">Back</Link>
+            <h5 className="arrow" />
+          </div>
+          )}
+          {showReserve ? (
+            <Reserve />
+          ) : (
+            <button className="btn btn-round btn-success reserve" type="submit" onClick={handleReserveClick}>
+              Reserve
+            </button>
+          )}
         </div>
-        )}
-        {showReserve ? (
-          <Reserve />
-        ) : (
-          <button className='btn btn-round btn-success reserve' type="submit" onClick={handleReserveClick}>
-            Reserve
-          </button>
-        )}
-      </div>
       </div>
     </div>
   );

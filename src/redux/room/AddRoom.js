@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import AddRoomImg from '../../components/AddRoomImg';
 
 const AddRoom = () => {
   const [error, setError] = useState(null);
@@ -53,45 +54,62 @@ const AddRoom = () => {
   return (
     <>
       {error && error}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={formRoomData.name}
-          onChange={handleChange}
-          placeholder="Name"
-        />
-        <input
-          type="text"
-          name="description"
-          value={formRoomData.description}
-          onChange={handleChange}
-          placeholder="Description"
-        />
-        <input
-          type="text"
-          name="photo"
-          value={formRoomData.photo}
-          onChange={handleChange}
-          placeholder="Photo Link"
-        />
-        <input
-          type="text"
-          name="city"
-          value={formRoomData.city}
-          onChange={handleChange}
-          placeholder="City"
-        />
-        <input
-          type="number"
-          name="price"
-          value={formRoomData.price}
-          onChange={handleChange}
-          placeholder="Price"
-        />
-        <button type="submit">Submit</button>
-        <div><Link to="/">Back</Link></div>
-      </form>
+      <div className="entry-page-components">
+        <AddRoomImg />
+        <div className="entry-page-container">
+          <h2 className="add-heading">Add Room</h2>
+          <form onSubmit={handleSubmit} className="form-container">
+            <input
+              type="text"
+              name="name"
+              value={formRoomData.name}
+              onChange={handleChange}
+              placeholder="Name"
+              className="form-input"
+            />
+            <input
+              type="text"
+              name="description"
+              value={formRoomData.description}
+              onChange={handleChange}
+              placeholder="Description"
+              className="form-input"
+            />
+            <input
+              type="text"
+              name="photo"
+              value={formRoomData.photo}
+              onChange={handleChange}
+              placeholder="Photo Link"
+              className="form-input"
+            />
+            <input
+              type="text"
+              name="city"
+              value={formRoomData.city}
+              onChange={handleChange}
+              placeholder="City"
+              className="form-input"
+            />
+            <input
+              type="number"
+              name="price"
+              value={formRoomData.price}
+              onChange={handleChange}
+              placeholder="Price"
+              className="form-input"
+            />
+            <div className="form-action-buttons">
+              <button type="submit" className="add-btn">Submit</button>
+            </div>
+            <div className="d-flex flex-row arrowCont">
+              <span className="arr" />
+              <Link to="/">Back</Link>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </>
 
   );

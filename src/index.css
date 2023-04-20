@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: content-box;
 }
 
 body {
@@ -43,15 +44,16 @@ body {
 }
 
 .header-div {
-  border: 2px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
-
-h1 {
+.header-div h1 {
   color: #97bf0e;
   font-weight: 700;
+  font-size: 50px;
+}
+.header-div p {
+  font-size: 20px;
+  color: #C8C8C8;
 }
 
 .form-container {
@@ -109,9 +111,6 @@ h1 {
   border: none;
 }
 
-.rooms {
-  border: 2px solid purple;
-}
 
 /* Desktop Version Style */
 @media only screen and (min-width: 769px) {
@@ -186,7 +185,7 @@ h1 {
     transition: 0.5s;
   }
 
-  .hotel-image {
+  /* .hotel-image {
     width: 60%;
-  }
+  } */
 }

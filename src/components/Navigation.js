@@ -1,26 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../home.css';
 
 function Navigate() {
-  // const [isOpen, setIsOpen] = useState(false);
-  //   const [isMobile, setIsMobile] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  function openNav() {
+    setIsActive(true);
+  }
 
-  //   function handleToggle() {
-  //     setIsOpen(!isOpen);
-  //   }
+  function closeNav() {
+    setIsActive(false);
+  }
+  const navigate = useNavigate();
+  const signOut = () => {
+    localStorage.removeItem('token');
+    navigate('/signin');
+  };
+
   return (
     <>
-      <div>
-        <img
-          src="https://img.icons8.com/ios-glyphs/1x/menu-rounded.png"
-          alt="Hamburger"
-          className="hamburger"
-        //   onClick={handleToggle}
-        />
+      <div className="navbar">
+        <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>&#9776;</span>
+        <nav
+          id="mySidenav"
+          className="sidenav"
+          style={
+          {
+            width: isActive ? '250px' : '0px',
+          }
+        }
+        >
 
-        {/* {isOpen && ( */}
-        <nav className="nav-bar">
-          <ul>
+          <ul className="nav-item">
+            <li>
+              <h1>Coco</h1>
+            </li>
+            <li>
+              <a className="closebtn" onClick={closeNav}>&times;</a>
+            </li>
             <li>
               <Link to="../add_room">Add Room</Link>
             </li>
@@ -28,14 +45,18 @@ function Navigate() {
               <Link to="../delete">Delete Room</Link>
             </li>
             <li>
-              <Link to="../reservations">My Reservations</Link>
+              <Link to="../reservations">Reservations</Link>
             </li>
             <li>
               <Link to="../reserve">Reserve Room</Link>
             </li>
+            <li>
+              <a onClick={signOut} type="button" className="signout">
+                SignOut
+              </a>
+            </li>
           </ul>
         </nav>
-        {/* )} */}
       </div>
     </>
   );
