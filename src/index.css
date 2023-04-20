@@ -136,19 +136,6 @@ body {
     height: 100vh;
   }
 
-  .navbar {
-    display: none;
-  }
-
-  /* button.open {
-    display: none;
-  } */
-
-  nav {
-    border: 2px solid red;
-    /* width: 20% !important; */
-  }
-
   .entry-page-container {
     position: static;
     width: fit-content;
