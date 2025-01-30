@@ -4,7 +4,7 @@ function HotelImage() {
   return (
     <div className="hotel-img-div">
       <img
-        src="https://content.pymnts.com/wp-content/uploads/2016/05/Hotel-Room-Secondary-Market-1000x600.jpg"
+        src="https://rb.gy/hgvdpi"
         alt="hotel"
         className="hotel-image"
       />
